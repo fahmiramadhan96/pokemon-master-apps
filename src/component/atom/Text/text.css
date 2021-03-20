@@ -1,0 +1,33 @@
+.small {
+    font-size: small;
+}
+.medium {
+    font-size: medium;
+}
+.large {
+    font-size: large;
+}
+.primary {
+    color: blue;
+}
+.secondary {
+    color: gray;
+}
+.black {
+    color: black;
+}
+.danger {
+    color: red;
+}
+.bold {
+    font-weight: bold;
+}
+.semibold {
+    font-weight: bolder;
+}
+.light {
+    font-weight: lighter;
+}
+.text-global-style {
+    padding: 2px;
+}
