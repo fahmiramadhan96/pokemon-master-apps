@@ -1,4 +1,8 @@
 /* CONTANTS GLOBAL */
+export const FAILED_FETCH_LIST = 'Im Sorry Your Service Is Trouble'
+
+/* API CONSTANTS */
+export const BASE_URL = 'https://pokeapi.co/api/v2'
 
 /* HOMEPAGE CONSTANTS */
 export const HOMEPAGE_TITLE = 'POKEDEX'
