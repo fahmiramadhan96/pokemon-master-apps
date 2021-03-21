@@ -19,6 +19,9 @@
 .danger {
     color: red;
 }
+.normal {
+    color: white;
+}
 .bold {
     font-weight: bold;
 }

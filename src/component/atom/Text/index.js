@@ -7,23 +7,23 @@ import PropTypes from 'prop-types'
 import './text.css'
 
 const Text = (props) => {
-    const { text ,
+    const { children,
         size = 'medium', 
         color = 'black', 
         weight = 'light' ,
     } = props
     
     return(
-        <text className={`${size} ${color} ${weight} text-global-style`}>
-            {text}
-        </text>
+        <p className={`${size} ${color} ${weight} text-global-style`}>
+            {children}
+        </p>
     )
 }
 
 Text.prototypes = {
-    text: PropTypes.string,
+    children: PropTypes.node,
     size: PropTypes.oneOf(['small', 'medium', 'large']),
-    color: PropTypes.oneOf(['primary', 'secondary', 'black', 'danger']),
+    color: PropTypes.oneOf(['primary', 'secondary', 'black', 'danger', 'normal']),
     weight: PropTypes.oneOf(['bold', 'semibold', 'light'])
 }
 

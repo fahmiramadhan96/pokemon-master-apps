@@ -1,26 +1,21 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Text from '../../atom/Text'
-
 
 import './mainViews.css'
+import logo from 'assets/image/logo.png'
 
 const MainViews = (props) => {
-    const {title, children} = props
+    const { children, style } = props
 
     return ( 
-        <div className='container'>
-            <Text
-                text = 'Test'
-                color = 'primary'
-                weight = 'bold'
-                size = 'medium'
-             />
+        <div className='container' style={style}>
+            <img className='img-logo' src={logo} alt='logo'/>
+            {children}
         </div>
 )}
 
 MainViews.prototypes = {
-    title : PropTypes.string,
+    style : PropTypes.object,
     children: PropTypes.node,
 }
 
