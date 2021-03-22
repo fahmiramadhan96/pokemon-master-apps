@@ -11,12 +11,14 @@
          size = 'medium', 
          type = 'default',
          style = {},
-         isRounded = false
+         isRounded = false,
+         onClick = () => {},
      } = props
      
      return(
          <button 
             className={`btn ${size} ${type} ${isRounded ? 'rounded' : ''}`}
+            onClick={onClick}
             style={style}>
              {children}
          </button>
@@ -24,6 +26,7 @@
  }
  
  Button.prototypes = {
+     onClick: PropTypes.func,
      children: PropTypes.node,
      isRounded: PropTypes.bool,
      style: PropTypes.object,

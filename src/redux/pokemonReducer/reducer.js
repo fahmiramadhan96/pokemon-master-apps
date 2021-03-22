@@ -10,6 +10,7 @@ import { ACTION } from './action'
 export const initialState = {
     isLoading : false,
     pokemonList : {
+        page:{},
         isError : false,
         errorText : '',
         data : [],
@@ -30,7 +31,8 @@ const pokemonReducer = (state = initialState, action) => {
                 isLoading: false,
                 pokemonList : {
                     isError: false,
-                    data : action.pokemonList
+                    page: {...action.pokemonList.page},
+                    data : action.pokemonList.data
                 }
             }
             break;

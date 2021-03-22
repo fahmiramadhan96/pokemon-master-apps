@@ -1,15 +1,24 @@
 import React from 'react'
 
+import * as CONTANTS from 'utils/constant'
+import './homepage.css'
+import { useHistory } from "react-router-dom";
+
 import MainViews from 'component/views/MainViews'
 import BoxViews from 'component/views/BoxViews'
 import Text from 'component/atom/Text'
 import Button from 'component/atom/Button'
 
-import * as CONTANTS from 'utils/constant'
-import './homepage.css'
+
 
 /** Homepage Page */
 const Homepage = () => {
+    let history = useHistory();
+
+    const route = (page) => (
+        history.push(page)
+    )
+
     return(
         <MainViews>
             <BoxViews 
@@ -26,6 +35,7 @@ const Homepage = () => {
                 </Text>
                 <div className='container-button'>
                     <Button 
+                        onClick = {() => route('/browsepage')}
                         isRounded = {true}
                         size='medium' 
                         type='info'>

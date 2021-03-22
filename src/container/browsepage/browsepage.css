@@ -1,0 +1,27 @@
+.container-button {
+    display: flex;
+    flex-direction: column;
+}
+.container-next-page {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.container-pagination {
+    display: flex;
+    margin-bottom: 12px;
+}
+.pagination {
+    border: 1px solid #fff;
+    border-radius: 2px;
+    padding: 0 5px;
+    cursor: pointer;
+}
+.pagination:nth-child(1){
+    margin-right: 3px;
+}
+.main-browser {
+    display: grid;
+    grid-template-columns: 18vw 18vw 18vw 18vw 18vw;
+    grid-gap: 8px;
+}

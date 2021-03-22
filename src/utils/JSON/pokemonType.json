@@ -1,0 +1,49 @@
+    [{ "name": "grass",
+        "selected" : false
+    },
+    {
+        "name": "fire",
+        "selected" : false
+    },
+    {
+        "name": "water",
+        "selected" : false
+    },{
+        "name": "bug",
+        "selected" : false
+    },{
+        "name": "normal",
+        "selected" : false
+    },{
+        "name": "poison",
+        "selected" : false
+    },{
+        "name": "electric",
+        "selected" : false
+    },{
+        "name": "ground",
+        "selected" : false
+    },{
+        "name": "fairy",
+        "selected" : false
+    },{
+        "name": "lighting",
+        "selected" : false
+    },{
+        "name": "phychic",
+        "selected" : false
+    },{
+        "name": "rock",
+        "selected" : false
+    },{
+        "name": "ghose",
+        "selected" : false
+    },
+    {
+        "name": "ice",
+        "selected" : false
+    },
+    {
+        "name": "dragon",
+        "selected" : false
+    }]

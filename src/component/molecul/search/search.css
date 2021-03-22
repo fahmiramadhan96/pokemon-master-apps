@@ -1,0 +1,26 @@
+#search {
+    padding: 5px;
+    background-color: #fff;
+    border-radius: 2px;
+}
+.input-search {
+    color:cornflowerblue;
+    padding: 5px;
+    border-radius: 2px;
+    background-color: #fff;
+    border: 1px solid;
+}
+.input-search:focus{
+    outline: none;
+}
+.btn-search {
+    height: 100%;
+    color: #fff;
+    background-color: cornflowerblue;
+    border: cornflowerblue;
+    cursor: pointer;
+}
+.btn-search:focus {
+    outline: none;
+}
+

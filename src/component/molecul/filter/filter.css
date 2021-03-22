@@ -1,0 +1,39 @@
+#filter {
+    padding: 5px;
+    background-color: #fff;
+}
+.btn-filter {
+    height: 100%;
+    color: #fff;
+    background-color: cornflowerblue;
+    border: cornflowerblue;
+    cursor: pointer;
+    border-radius: 3px;
+}
+.btn-filter:focus {
+    outline: none;
+}
+.filter-box {
+    display: flex;
+    flex-direction: column;
+    margin-top: 4px;
+    background-color: #fff;
+    padding: 2px;
+    position: absolute;
+    right: 12px;
+    z-index: 10;
+    border-radius: 2px;
+    padding: 5px;
+    min-width: 20vw;
+}
+.filter-main {
+    max-height: 40vh;
+    overflow: auto;
+}
+.filter-items {
+    margin-bottom: 5px;
+}
+.filter-items  > label {  
+    color: cornflowerblue;
+}
+
