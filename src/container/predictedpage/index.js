@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import { createStructuredSelector } from 'reselect'
+import PropTypes from 'prop-types'
 
 import './predicted.css'
 
@@ -10,7 +11,7 @@ import PredictedViews from 'component/views/PredictedViews'
 
 import { fetchPredictedPokemon } from 'redux/pokemonReducer/action'
 import { getPokemonPredicted, getLoading } from 'redux/pokemonReducer/selector'
-import PropTypes from 'prop-types'
+import Loading from 'component/molecul/loading'
 
 
 
@@ -73,6 +74,7 @@ const Predictedpage = (props) => {
 
     return(
         <MainViews>
+            {isLoading ? <Loading/> : 
             <PredictedViews      
                 isCloseModal = {isCloseModal}
                 pokemonData = {checkPersentage(predictedData)}
@@ -89,7 +91,7 @@ const Predictedpage = (props) => {
                         setCloseModal(false)
                     }, 100);
                     props.fetchPredicted(value)}}/> 
-
+            }
         </MainViews>
     )
 }

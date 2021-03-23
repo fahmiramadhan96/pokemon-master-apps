@@ -13,8 +13,9 @@ const CompareViews = (props) => {
         <Modal 
             isClose={isCloseModal}
             modalTitle='Select Pokemon'
-            buttonTitle='Search Pokemon'>
+            buttonTitle='Select Pokemon'>
             <Search 
+                placeholder ='Input Pokemon Id or Name'
                 buttonStyle={{height: '27px'}}
                 onSearchClick = {(val)=> onSearchClick(key, val)}/> 
         </Modal>

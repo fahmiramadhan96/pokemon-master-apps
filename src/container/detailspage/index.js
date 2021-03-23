@@ -11,6 +11,7 @@ import { getPokemonDetail, getLoading } from 'redux/pokemonReducer/selector'
 
 import MainViews from 'component/views/MainViews'
 import DetailViews from 'component/views/DetailViews'
+import Loading from 'component/molecul/loading'
 
 
 
@@ -23,8 +24,10 @@ const Detailspage = (props) => {
     },[])
     return(
         <MainViews>
-          {pokemonDetail && 
-            <DetailViews detailsData = {pokemonDetail}/> }
+          {isLoading ? <Loading/> : 
+          pokemonDetail && 
+            <DetailViews detailsData = {pokemonDetail}/> 
+          }
         </MainViews>
     )
 }

@@ -11,6 +11,7 @@ import CompareViews from 'component/views/CompareViews'
 
 import { fetchPokemonDetail } from 'redux/pokemonReducer/action'
 import { getPokemonDetail, getLoading } from 'redux/pokemonReducer/selector'
+import Loading from 'component/molecul/loading'
 
 
 
@@ -28,6 +29,7 @@ const Comparepage = (props) => {
     },[pokemonDetail])
     return(
         <MainViews>
+            {isLoading ? <Loading/> : 
             <CompareViews 
                 isCloseModal = {isCloseModal}
                 pokemonData = {comapareData}
@@ -44,6 +46,7 @@ const Comparepage = (props) => {
                         setCloseModal(false)
                     }, 100);
                     props.fetchPokemon(value)}}/>
+            }
         </MainViews>
     )
 }

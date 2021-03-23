@@ -10,7 +10,6 @@ import Text from 'component/atom/Text'
 import Button from 'component/atom/Button'
 
 
-
 /** Homepage Page */
 const Homepage = () => {
     let history = useHistory();

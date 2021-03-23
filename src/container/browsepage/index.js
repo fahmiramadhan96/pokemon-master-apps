@@ -20,6 +20,7 @@ import { getLoading, getPokemonList  } from 'redux/pokemonReducer/selector'
 
 import pokemonType from 'utils/JSON/pokemonType.json'
 import { useState } from 'react'
+import Loading from 'component/molecul/loading'
 
 
 
@@ -75,6 +76,8 @@ import { useState } from 'react'
 
     return(
         <MainViews>
+            {isLoading ? <Loading/> : 
+            <>
             <div className='container-next-page'>
                 <Text size='medium' color='normal' weight='bold'>
                     Browse Data
@@ -121,6 +124,8 @@ import { useState } from 'react'
                     />)
                 )}
             </div>
+            </>
+        }
         </MainViews>
     )
 }

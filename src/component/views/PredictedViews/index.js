@@ -16,6 +16,7 @@ const CompareViews = (props) => {
             modalTitle='Select Pokemon'
             buttonTitle='Select Pokemon'>
             <Search 
+                placeholder ='Input Pokemon Id or Name'
                 buttonStyle={{height: '27px'}}
                 onSearchClick = {(val)=> onSearchClick(key, val)}/> 
         </Modal>
@@ -23,23 +24,26 @@ const CompareViews = (props) => {
     const firstPoekemon = pokemonData.predicted0
     const secondPoekemon = pokemonData.predicted1
     return(
-        <div id='container-predicted'>
-            {!firstPoekemon ?  <div className='modal-container'>{addPokemon(0)}</div> :
-            <div className='main-predicted main-predicted-left'>
-                <img className='main-image' alt='main-img' src={firstPoekemon && firstPoekemon.img}/>
-                <Text size='extralarge' weight='bold' color='normal'>"{firstPoekemon && firstPoekemon.name}"</Text>
-                <Text size='extralarge' weight='bold' color='normal'>{firstPoekemon && firstPoekemon.precentage}</Text>
-                <Button size='large' type='info' onClick = {() => onReset(0)}>RESET</Button>
+        <div id="predicted">
+            <Text size='extralarge' weight='bold' color='normal'>PREDICTED BATTLE</Text>
+            <div className='container-predicted'>
+                {!firstPoekemon ?  <div className='modal-container'>{addPokemon(0)}</div> :
+                <div className='main-predicted main-predicted-left'>
+                    <img className='main-image' alt='main-img' src={firstPoekemon && firstPoekemon.img}/>
+                    <Text size='extralarge' weight='bold' color='normal'>"{firstPoekemon && firstPoekemon.name}"</Text>
+                    <Text size='extralarge' weight='bold' color='normal'>{firstPoekemon && firstPoekemon.precentage}</Text>
+                    <Button size='large' type='info' onClick = {() => onReset(0)}>RESET</Button>
+                </div>
+                }
+                {!secondPoekemon ? <div className='modal-container'>{addPokemon(1)}</div> :
+            <div className='main-predicted main-predicted-right'>
+                    <img className='main-image' alt='main-img' src={secondPoekemon && secondPoekemon.img}/>
+                    <Text size='extralarge' weight='bold' color='normal'>"{secondPoekemon && secondPoekemon.name}"</Text>
+                    <Text size='extralarge' weight='bold' color='normal'>{secondPoekemon && secondPoekemon.precentage}</Text>
+                    <Button size='large' type='info' onClick = {() => onReset(1)}>RESET</Button>
+                </div>
+                }
             </div>
-            }
-            {!secondPoekemon ? <div className='modal-container'>{addPokemon(1)}</div> :
-           <div className='main-predicted main-predicted-right'>
-                <img className='main-image' alt='main-img' src={secondPoekemon && secondPoekemon.img}/>
-                <Text size='extralarge' weight='bold' color='normal'>"{secondPoekemon && secondPoekemon.name}"</Text>
-                <Text size='extralarge' weight='bold' color='normal'>{secondPoekemon && secondPoekemon.precentage}</Text>
-                <Button size='large' type='info' onClick = {() => onReset(1)}>RESET</Button>
-            </div>
-            }
         </div>
     )
 }
