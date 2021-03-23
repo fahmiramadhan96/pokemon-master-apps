@@ -1,7 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import { createStructuredSelector } from 'reselect'
+import PropTypes from 'prop-types'
 
 import './comparepage.css'
 
@@ -10,8 +11,6 @@ import CompareViews from 'component/views/CompareViews'
 
 import { fetchPokemonDetail } from 'redux/pokemonReducer/action'
 import { getPokemonDetail, getLoading } from 'redux/pokemonReducer/selector'
-import PropTypes from 'prop-types'
-import { useState } from 'react/cjs/react.development'
 
 
 

@@ -7,7 +7,10 @@ export const ACTION = {
     FETCH_POKEMON_LIST_SUCCESS : 'FETCH_POKEMON_LIST_SUCCESS',
     FETCH_POKEMON_LIST_FAILED : 'FETCH_POKEMON_LIST_FAILED',
     FETCH_POKEMON_DETAIL : 'FETCH_POKEMON_DETAIL',
-    SET_POKEMON_DETAIL : 'SET_POKEMON_DETAIL'
+    SET_POKEMON_DETAIL : 'SET_POKEMON_DETAIL',
+    FETCH_POKEMON_PREDICTED : 'FETCH_POKEMON_PREDICTED',
+    SET_POKEMON_PREDICTED : 'SET_POKEMON_PREDICTED',
+
 }
 
 export const fetchPokemonList = (params) => ({
@@ -38,4 +41,14 @@ export const fetchPokemonDetail = (params) => ({
 export const setPokemonDetail = (pokemonDetail) => ({
     type: ACTION.SET_POKEMON_DETAIL,
     pokemonDetail
+})
+
+export const fetchPredictedPokemon = (params) => ({
+    type: ACTION.FETCH_POKEMON_PREDICTED,
+    params
+})
+
+export const setPredictedPokemon = (pokemonPredicted) => ({
+    type: ACTION.SET_POKEMON_PREDICTED,
+    pokemonPredicted
 })

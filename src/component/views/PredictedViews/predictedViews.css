@@ -1,0 +1,26 @@
+#container-predicted{
+    display: grid;
+    grid-template-columns: 45vw 45vw;
+    height: 70vh;
+    gap: 10px;
+    border: 1px solid white;
+    border-radius: 20px;
+}
+.modal-container {
+    margin-top: 20px;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.main-predicted {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.main-image{
+    height: 12rem;
+    width: 12rem;
+}

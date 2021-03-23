@@ -10,9 +10,11 @@ import {
     ACTION,
     fetchPokemonListSuccess,
     fetchPokemonListFailed,
-    setPokemonDetail } from './action'
+    setPokemonDetail,
+    setPredictedPokemon } from './action'
 import listData from 'utils/constructData/listData'
 import detailsData from 'utils/constructData/detailsData'
+import predictedData from 'utils/constructData/predictedData'
 import * as CONSTANT from 'utils/constant'
 
 /** Request pokemon list  */
@@ -87,8 +89,29 @@ export function* getPokemonDetail(parameter){
     }
 }
 
+
+export function* getPredictedPokemon(parameter){
+    const {params} = parameter 
+    const pokemonDetail = `${CONSTANT.BASE_URL}/pokemon/${params}`;
+    const pokemonTypes = `${CONSTANT.BASE_URL}/type/${params}`
+    try {
+        const options = {
+          method: 'GET',
+          'Access-Control-Allow-Origin': '*'
+        };
+        let pokemonData = yield call(request, pokemonDetail, options);
+        const pokemonType = yield call(request, pokemonTypes, options)
+        const response = predictedData(pokemonData, pokemonType)
+        yield put(setPredictedPokemon(response))
+    }
+    catch (err) {
+        yield fetchPokemonListFailed(CONSTANT.FAILED_FETCH_LIST)
+    }
+}
+
 export default function* pokemonSaga() {
     yield takeLatest(ACTION.FETCH_POKEMON_LIST, fetchPokemonList)
     yield takeLatest(ACTION.SEARCH_POKEMON, searchPokemon)
     yield takeLatest(ACTION.FETCH_POKEMON_DETAIL, getPokemonDetail)
+    yield takeLatest(ACTION.FETCH_POKEMON_PREDICTED, getPredictedPokemon)
 }

@@ -4,7 +4,8 @@
 }
 .container-next-page {
     display: flex;
-    width: 100%;
+    width: 93vw;
+    margin: 10px 0;
     justify-content: space-between;
 }
 .container-pagination {

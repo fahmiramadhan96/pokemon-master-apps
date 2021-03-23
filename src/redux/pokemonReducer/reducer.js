@@ -14,7 +14,8 @@ export const initialState = {
         isError : false,
         errorText : '',
         data : [],
-        pokemonDetail: {}
+        pokemonDetail: {},
+        pokemonPredicted: {},
     },
 }
 
@@ -60,6 +61,13 @@ const pokemonReducer = (state = initialState, action) => {
                 isLoading: false,   
                 pokemonDetail: action.pokemonDetail    
                }
+            break
+        case ACTION.SET_POKEMON_PREDICTED:
+            state = {
+                ...state,
+                isLoading: false,
+                pokemonPredicted : action.pokemonPredicted
+            }
             break
         default:
             break;

@@ -4,7 +4,6 @@ import PropTypes from 'prop-types'
 import Text from 'component/atom/Text'
 
 import './detailViews.css'
-import Modal from 'component/organism/modal'
 
 const DetailViews = (props) => {
     const { detailsData } = props
@@ -35,7 +34,6 @@ const DetailViews = (props) => {
                         <td>Pokemon Type</td>
                         <th>{detailsData.type 
                             && detailsData.type.map((val, index) => `  ${val.toUpperCase()} ${index === detailsData.type.length-1 ? '': ',' }`)}
-                        
                         </th>
                     </tr>
                     <tr>

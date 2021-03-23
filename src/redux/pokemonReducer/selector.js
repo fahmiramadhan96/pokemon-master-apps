@@ -18,10 +18,15 @@ const getPokemonDetail = () => createSelector(
     selectGlobal,
     (state) => state.pokemonDetail
 )
+const getPokemonPredicted = () => createSelector(
+    selectGlobal,
+    (state) => state.pokemonPredicted
+)
 
 export {
     selectGlobal,
     getLoading,
     getPokemonList,
     getPokemonDetail,
+    getPokemonPredicted,
 }

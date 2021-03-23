@@ -49,6 +49,7 @@ const Homepage = () => {
                     { CONTANTS.HOMEPAGE_BUTTON_COMPARE }
                     </Button>
                     <Button 
+                        onClick={() => route('/predictedpage')}
                         isRounded = {true}
                         size='medium' 
                         type='info'>
