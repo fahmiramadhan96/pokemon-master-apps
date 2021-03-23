@@ -27,7 +27,7 @@ const Text = (props) => {
 Text.prototypes = {
     style: PropTypes.object,
     children: PropTypes.node,
-    size: PropTypes.oneOf(['small', 'medium', 'large']),
+    size: PropTypes.oneOf(['small', 'medium', 'large', 'extralarge']),
     color: PropTypes.oneOf(['primary', 'secondary', 'black', 'danger', 'normal']),
     weight: PropTypes.oneOf(['bold', 'semibold', 'light'])
 }

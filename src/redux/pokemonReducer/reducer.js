@@ -14,6 +14,7 @@ export const initialState = {
         isError : false,
         errorText : '',
         data : [],
+        pokemonDetail: {}
     },
 }
 
@@ -46,6 +47,19 @@ const pokemonReducer = (state = initialState, action) => {
                     errorText: action.error
                 }
             }
+            break
+        case ACTION.FETCH_POKEMON_DETAIL:
+            state = {
+                ...state,
+                isLoading: true,       
+            }
+            break
+        case ACTION.SET_POKEMON_DETAIL:
+            state = {
+                ...state,
+                isLoading: false,   
+                pokemonDetail: action.pokemonDetail    
+               }
             break
         default:
             break;

@@ -5,6 +5,7 @@ import './search.css'
 
 const Search = (props) => {
     const {placeholder='',
+        buttonStyle={},
         onSearchClick = () => {},
     } = props
     const [searchValue, setSearchValue] = useState('')
@@ -16,6 +17,7 @@ const Search = (props) => {
                 className='input-search' 
                 placeholder={placeholder}/>
            <button 
+                style={buttonStyle}
                 onClick={() => onSearchClick(searchValue)}
                 className='btn-search'>Search</button>
         </div>
@@ -24,6 +26,7 @@ const Search = (props) => {
 
 Search.prototypes = {
     onSearchClick: PropTypes.func,
+    buttonStyle: PropTypes.object,
 }
 
 export default Search

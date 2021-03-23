@@ -14,9 +14,14 @@ const getPokemonList = () => createSelector(
     selectGlobal,
     (state) => state.pokemonList
 )
+const getPokemonDetail = () => createSelector(
+    selectGlobal,
+    (state) => state.pokemonDetail
+)
 
 export {
     selectGlobal,
     getLoading,
-    getPokemonList
+    getPokemonList,
+    getPokemonDetail,
 }

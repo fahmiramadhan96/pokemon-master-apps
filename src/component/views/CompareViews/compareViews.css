@@ -1,0 +1,33 @@
+#container-compareviews{
+    width: 90vw;
+}
+#container-compareviews .header-compareviews{
+    display: flex;
+    justify-content: space-around;
+}
+.comapare-image{
+    width: 12rem;
+}
+.no-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 12rem;
+    height: 12rem;
+    background-color: gray;
+}
+#container-compareviews > table{
+    width: 100%;
+}
+  
+#container-compareviews th, td {
+    padding: 8px;
+    text-align: center;
+}
+#container-compareviews tr:nth-child(even) {
+      color: cornflowerblue;
+      background-color: #f2f2f2;
+}
+#container-compareviews tr:nth-child(odd) {
+      color: #fff;
+}

@@ -42,6 +42,7 @@ const Homepage = () => {
                     { CONTANTS.HOMEPAGE_BUTTON_BROWSER }
                     </Button>
                     <Button 
+                        onClick = {() => route('/comparepage')}
                         isRounded = {true}
                         size='medium' 
                         type='info'>

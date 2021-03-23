@@ -16,7 +16,7 @@ const Card = (props) => {
     
 
     return(
-        <div id='container-card' className={`type-${pokemonType}`}>
+        <div id='container-card' className={`type-${pokemonType}`} onClick={() => onClick()}>
             <Text 
                 style={{position: 'absolute'}} 
                 size='small' 

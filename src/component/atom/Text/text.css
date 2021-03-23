@@ -7,6 +7,9 @@
 .large {
     font-size: large;
 }
+.extralarge {
+    font-size: xx-large;
+}
 .primary {
     color: blue;
 }

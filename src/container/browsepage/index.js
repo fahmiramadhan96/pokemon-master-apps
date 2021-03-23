@@ -2,8 +2,10 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { createStructuredSelector } from 'reselect'
+import PropTypes from 'prop-types'
 
-// import * as CONTANTS from 'utils/constant'
+import { useHistory } from "react-router-dom";
+
 import './browsepage.css'
 
 import MainViews from 'component/views/MainViews'
@@ -13,7 +15,7 @@ import Button from 'component/atom/Button'
 import Search from 'component/molecul/search'
 import Filter from 'component/molecul/filter'
 
-import { fetchPokemonList } from 'redux/pokemonReducer/action'
+import { fetchPokemonList, searchPokemon } from 'redux/pokemonReducer/action'
 import { getLoading, getPokemonList  } from 'redux/pokemonReducer/selector' 
 
 import pokemonType from 'utils/JSON/pokemonType.json'
@@ -22,10 +24,12 @@ import { useState } from 'react'
 
 
 /** Browse Pokemon Page */
-const Browse = (props) => {
+ const Browsepage = (props) => {
     const { isLoading, pokemonList } = props
     const clonePokemonType = JSON.stringify(pokemonType)
     const [filterData, setFilterData] = useState(JSON.parse(clonePokemonType))
+
+    let history = useHistory();
     /*  fetch pokemon data */
     useEffect(() => {
         props.fetchPokemon()
@@ -35,6 +39,7 @@ const Browse = (props) => {
         (
         props.fetchPokemon(params)
     )}
+
     const filterClick = (val) => {
         const newFilterData = filterData.map(fVal => {
             if(fVal.name === val) {
@@ -95,7 +100,7 @@ const Browse = (props) => {
             </div>
             <div className='container-next-page'>
                 <Search 
-                    onSearchClick = {(e) => console.log(e)}
+                    onSearchClick = {(e) => e === '' ? props.fetchPokemon() :  props.searchPokemon(e)}
                     placehoder='Search Your Pokemon'/>
                 <Filter 
                     filterData = {filterData}
@@ -112,14 +117,20 @@ const Browse = (props) => {
                         pokemonNo={pokemon.no}
                         pokemonName={pokemon.name}
                         pokemonType={pokemon.type[0]}
+                        onClick={() => history.push(`/details/${pokemon.name}`)}
                     />)
                 )}
             </div>
         </MainViews>
     )
 }
-
-const mapStateToProps = createStructuredSelector({
+Browsepage.prototypes = {
+    pokemonList: PropTypes.array,
+    isLoading: PropTypes.bool,
+    fetchPokemon: PropTypes.func,
+    searchPokemon: PropTypes.func
+}
+  const mapStateToProps = createStructuredSelector({
     pokemonList: getPokemonList(),
     isLoading: getLoading(),
   })
@@ -128,6 +139,9 @@ const mapStateToProps = createStructuredSelector({
     fetchPokemon: (params) => {
       dispatch(fetchPokemonList(params))
     },
+    searchPokemon: (params) => {
+        dispatch(searchPokemon(params))
+    }
   })
   
-  export default connect(mapStateToProps, mapDispatchToProps)(Browse)
+  export default connect(mapStateToProps, mapDispatchToProps)(Browsepage)
